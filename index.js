@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   console.log(`a user ${socket.id} connected.`);
-  socket.on('chat', (data) => {
-    socket.emit('chatResponse', data);
+  socket.on('chat', (channel, data) => {
+    socket.emit('chatResponse-' + channel, data);
   })
   socket.on('disconnect',() => {
     console.log(`a user ${socket.id} disconnected.`)
