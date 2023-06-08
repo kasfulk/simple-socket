@@ -1,0 +1,27 @@
+{
+  "name": "simple-socket",
+  "version": "1.0.0",
+  "description": "A simple websocket with express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kasfulk/simple-socket.git"
+  },
+  "keywords": [
+    "websocket",
+    "express"
+  ],
+  "author": "Kasjful Kurniawan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kasfulk/simple-socket/issues"
+  },
+  "homepage": "https://github.com/kasfulk/simple-socket#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.2"
+  }
+}
