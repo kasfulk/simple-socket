@@ -13,8 +13,9 @@ const io = new Server(server, {
   handlePreflightRequest: (req, res) => {
     res.writeHead(200, {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "*",
-      "Access-Control-Allow-Headers": "*"
+      "Access-Control-Allow-Methods": "GET,POST",
+      "Access-Control-Allow-Headers": "custom-header",
+      "Access-Control-Allow-Credentials": true
     });
     res.end();
   }
