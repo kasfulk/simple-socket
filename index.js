@@ -2,24 +2,17 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const cors = require("cors");
-
-app.use(cors());
-
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
-  origins: ["*"],
-
-  handlePreflightRequest: (req, res) => {
-    res.writeHead(200, {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,POST",
-      "Access-Control-Allow-Headers": "custom-header",
-      "Access-Control-Allow-Credentials": true
-    });
-    res.end();
+  cors: {
+    origin: ["http://localhost:5173","*"],
+    allowedHeaders: ["custom-header"],
+    credentials: true
   }
 });
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send({
